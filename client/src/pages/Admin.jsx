@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const DEFAULT_PAYOFF = {
-  bothConfess: 1,
-  iConfessTheySilent: 5,
-  iSilentTheyConfess: 0,
-  bothSilent: 3,
+  bothConfess: 2,
+  iConfessTheySilent: 0,
+  iSilentTheyConfess: 3,
+  bothSilent: 1,
 };
 
 function useAdminAuth() {
@@ -148,14 +148,15 @@ export default function Admin() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-3">
-                    Payoff Matrix
+                  <label className="block text-sm font-medium text-slate-300 mb-1">
+                    Years in Prison per Round
                   </label>
+                  <p className="text-slate-500 text-xs mb-3">Lower = less time served = better outcome</p>
                   <div className="space-y-2">
                     {[
                       { key: 'bothSilent', label: 'Both stay silent (both cooperate)' },
-                      { key: 'iConfessTheySilent', label: 'I confess, they stay silent' },
-                      { key: 'iSilentTheyConfess', label: 'I stay silent, they confess' },
+                      { key: 'iConfessTheySilent', label: 'I confess, they stay silent (I go free)' },
+                      { key: 'iSilentTheyConfess', label: 'I stay silent, they confess (I get max)' },
                       { key: 'bothConfess', label: 'Both confess (both betray)' },
                     ].map(({ key, label }) => (
                       <div key={key} className="flex items-center justify-between gap-4">

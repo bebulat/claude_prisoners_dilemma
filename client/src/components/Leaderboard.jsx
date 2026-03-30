@@ -13,7 +13,7 @@ export default function Leaderboard({ entries, myId }) {
     <div className="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden">
       <div className="px-6 py-4 border-b border-slate-700">
         <h2 className="text-xl font-bold text-white">Leaderboard</h2>
-        <p className="text-slate-400 text-sm mt-1">Total score across all matches</p>
+        <p className="text-slate-400 text-sm mt-1">Total years in prison — lowest wins</p>
       </div>
 
       {/* Strategy key */}
@@ -32,7 +32,7 @@ export default function Leaderboard({ entries, myId }) {
             <tr className="text-left text-xs font-medium text-slate-400 uppercase tracking-wider border-b border-slate-700">
               <th className="px-6 py-3">#</th>
               <th className="px-6 py-3">Player</th>
-              <th className="px-6 py-3">Score</th>
+              <th className="px-6 py-3">Years</th>
               <th className="px-6 py-3">Strategy</th>
             </tr>
           </thead>
@@ -54,7 +54,7 @@ export default function Leaderboard({ entries, myId }) {
                   )}
                 </td>
                 <td className="px-6 py-4">
-                  <span className="text-white font-bold text-lg">{entry.totalScore}</span>
+                  <span className="text-white font-bold text-lg">{entry.totalScore} yrs</span>
                 </td>
                 <td className="px-6 py-4">
                   {entry.strategy ? (

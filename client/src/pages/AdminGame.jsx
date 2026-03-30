@@ -83,16 +83,16 @@ export default function AdminGame() {
             </div>
             <div>
               <p className="text-slate-400">Both confess</p>
-              <p className="text-red-400 font-semibold">{game.settings.payoff.bothConfess}</p>
+              <p className="text-red-400 font-semibold">{game.settings.payoff.bothConfess} yrs</p>
             </div>
             <div>
               <p className="text-slate-400">Both silent</p>
-              <p className="text-emerald-400 font-semibold">{game.settings.payoff.bothSilent}</p>
+              <p className="text-emerald-400 font-semibold">{game.settings.payoff.bothSilent} yr</p>
             </div>
             <div>
               <p className="text-slate-400">Betray / Suckered</p>
               <p className="text-white font-semibold">
-                {game.settings.payoff.iConfessTheySilent} / {game.settings.payoff.iSilentTheyConfess}
+                {game.settings.payoff.iConfessTheySilent} / {game.settings.payoff.iSilentTheyConfess} yrs
               </p>
             </div>
           </div>

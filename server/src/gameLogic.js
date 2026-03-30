@@ -74,7 +74,7 @@ function runAllMatches(players, rounds, payoff) {
       totalScore: totals[p.id],
       strategy: p.strategy,
     }))
-    .sort((a, b) => b.totalScore - a.totalScore)
+    .sort((a, b) => a.totalScore - b.totalScore)
     .map((p, i) => ({ ...p, rank: i + 1 }));
 
   return { leaderboard, matches };

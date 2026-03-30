@@ -185,23 +185,23 @@ export default function GamePage() {
 function PayoffInfo({ payoff, rounds }) {
   return (
     <div className="bg-slate-800 rounded-xl border border-slate-700 p-4 mb-6 text-sm">
-      <p className="text-slate-400 mb-2 font-medium">Game settings: {rounds} rounds &middot; Payoffs per round</p>
+      <p className="text-slate-400 mb-2 font-medium">Game settings: {rounds} rounds &middot; Years in prison per round (lower is better)</p>
       <div className="grid grid-cols-2 gap-2">
         <div className="flex justify-between">
           <span className="text-slate-400">Both stay silent</span>
-          <span className="text-emerald-400 font-semibold">{payoff.bothSilent} each</span>
+          <span className="text-emerald-400 font-semibold">{payoff.bothSilent} yr each</span>
         </div>
         <div className="flex justify-between">
           <span className="text-slate-400">Both confess</span>
-          <span className="text-red-400 font-semibold">{payoff.bothConfess} each</span>
+          <span className="text-red-400 font-semibold">{payoff.bothConfess} yrs each</span>
         </div>
         <div className="flex justify-between">
           <span className="text-slate-400">You confess, they don't</span>
-          <span className="text-amber-400 font-semibold">{payoff.iConfessTheySilent} / {payoff.iSilentTheyConfess}</span>
+          <span className="text-amber-400 font-semibold">{payoff.iConfessTheySilent} / {payoff.iSilentTheyConfess} yrs</span>
         </div>
         <div className="flex justify-between">
           <span className="text-slate-400">They confess, you don't</span>
-          <span className="text-amber-400 font-semibold">{payoff.iSilentTheyConfess} / {payoff.iConfessTheySilent}</span>
+          <span className="text-amber-400 font-semibold">{payoff.iSilentTheyConfess} / {payoff.iConfessTheySilent} yrs</span>
         </div>
       </div>
     </div>

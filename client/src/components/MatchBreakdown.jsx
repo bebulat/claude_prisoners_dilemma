@@ -46,14 +46,14 @@ function MatchCard({ match, leaderboard, myId }) {
           <PlayerScore
             name={match.player1.name}
             score={match.scores.p1}
-            isWinner={match.scores.p1 > match.scores.p2}
+            isWinner={match.scores.p1 < match.scores.p2}
             isMe={p1IsMe}
           />
           <span className="text-slate-500 text-sm shrink-0">vs</span>
           <PlayerScore
             name={match.player2.name}
             score={match.scores.p2}
-            isWinner={match.scores.p2 > match.scores.p1}
+            isWinner={match.scores.p2 < match.scores.p1}
             isMe={p2IsMe}
             reverse
           />
