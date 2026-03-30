@@ -11,3 +11,7 @@ services:
         sync: false
       - key: PORT
         value: 3001
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_REPO
+        value: bebulat/claude_prisoners_dilemma

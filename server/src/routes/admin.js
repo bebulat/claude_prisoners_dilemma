@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const store = require('../gameStore');
 const { runAllMatches } = require('../gameLogic');
+const { saveResultsToGitHub } = require('../githubSave');
 
 function adminAuth(req, res, next) {
   const password = req.headers['x-admin-password'];
@@ -64,6 +65,10 @@ router.post('/games/:code/start', adminAuth, (req, res) => {
   store.setGameResults(game.code, results);
 
   io.to(game.code).emit('game:results', results);
+
+  saveResultsToGitHub(game, results).catch((err) =>
+    console.error('Failed to save results to GitHub:', err.message)
+  );
 
   res.json({ success: true, results });
 });
